@@ -5,7 +5,7 @@
 ## Create new keys:
 
 ```bash
-# This command would create a key named "aws" in ~/.ssh folder.
+# This command would create a key named "aws" in ~/.ssh folder
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/aws
 ```
 
@@ -23,10 +23,10 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/aws
 ## Terraform commands:
 
 ```bash
-# Initializes the working directory and downloads necessary providers.
+# Initializes the working directory and downloads necessary providers
 terraform init
 
-# Formats terraform configuration files to maintain consistent style.
+# Formats terraform configuration files to maintain consistent style
 terraform fmt
 
 # Checks if configuration syntax is valid
@@ -39,10 +39,10 @@ terraform apply
 ## Ansible commands:
 
 ```bash
-# Checks the playbook for syntax errors without running any tasks.
+# Checks the playbook for syntax errors without running any tasks
 ansible-playbook --syntax-check playbook.yml
 
-# Analyzes the playbook for best practices and common mistakes and ensuring clean code.
+# Analyzes the playbook for best practices and common mistakes and ensuring clean code
 ansible-lint playbook.yml
 
 ```
