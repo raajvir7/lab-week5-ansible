@@ -1,8 +1,36 @@
 - name: Configure web servers
   tasks:
     - name: Install nginx
+      package:
+        name: nginx
+        state: present
+
     - name: create directory structure for web documents
+      file:
+        path: /web/html
+        state: present
+        mode: 0755
+
     - name: copy nginx conf file to server
+      copy:
+        src: files/nginx.conf
+        dest: /etc/nginx/sites-available/default
+        mode: 0644
+
     - name: create link to nginx config file to enable it
+      file:
+        src: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+
     - name: Generate index.html file from template
+      template:
+        src: templates/index.html.j2
+        dest: /web/html/index.html
+        mode: 0755
+
     - name: reload nginx service
+      service:
+        name: nginx
+        enabled: yes
+        state: reloaded
