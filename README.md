@@ -34,6 +34,9 @@ terraform validate
 
 # Creates infrastructure based on configuration
 terraform apply
+
+# Destroys all infrastructure managed by terraform
+terraform destroy
 ```
 
 ## Ansible commands:
@@ -45,4 +48,8 @@ ansible-playbook --syntax-check playbook.yml
 # Analyzes the playbook for best practices and common mistakes and ensuring clean code
 ansible-lint playbook.yml
 
+# Runs the playbook on the target hosts
+ansible-playbook playbook.yml
 ```
+
+![Rendered HTML Page](./ansible.png)
